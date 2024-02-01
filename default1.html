@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Arshniv Labs</title>
+    <style>
+        /* Reset some default browser styles */
+        body,
+        h1,
+        h2,
+        h3,
+        p,
+        ul,
+        ol,
+        li {
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Header styles */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #232f3e;
+            padding: 10px 20px;
+            color: #fff;
+            position: static;
+        }
+
+        .logo {
+            width: 100px;
+            /* Add your logo styles */
+        }
+
+        .sign-in-button {
+            padding: 8px 20px;
+            background-color: #0066cc;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+        }
+
+        /* Body styles */
+        .main-image {
+            width: 100%;
+            height: 100vh;
+            /* Adjust height as needed */
+            object-fit: cover;
+        }
+
+        .course-images {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            margin: 20px 0;
+        }
+
+        .course-images img {
+            width: 25%;
+            /* Adjust size as needed */
+            border: 2px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .cart-view {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            margin: 20px 0;
+        }
+
+        .cart-view img {
+            width: 70px;
+            /* Adjust size as needed */
+        }
+
+        /* Placeholders */
+        .placeholders {
+            display: flex;
+            justify-content: space-around;
+            margin: 20px 0;
+        }
+
+        .placeholder {
+            width: 30%;
+            /* Adjust size as needed */
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            text-align: center;
+        }
+
+        /* Modal styles */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 1000;
+        }
+
+        .modal-content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px red;
+            z-index: 1001;
+        }
+
+        .container {
+            width: 1500px;
+            margin: auto;
+            display: flex;
+            align-items: center;
+        }
+
+        .image {
+            flex: 1;
+            padding-right: 5px;
+        }
+
+        .image img {
+            padding-top: 50px;
+            padding-bottom: 30px;
+            padding-right: 5px;
+            margin-left: 250px;
+            margin-right: 60px;
+            width: 450px;
+            height: 680px;
+            display: block;
+            border: 3px 4px solid white;
+            box-shadow: 2px;
+        }
+
+        .content {
+            flex: 1;
+            padding-left: 20px;
+            margin-right: 250px;
+            justify-content: center;
+        }
+
+
+        #par1 {
+            color: red;
+            border-radius: 8px;
+            border: 1px solid red;
+            margin-right: 382px;
+            margin-left: 5px;
+            text-align: center;
+            background-color: #ffcccb;
+            font-size: 13px;
+        }
+
+        #cont1 {
+            margin-top: 30px;
+        }
+
+
+        #par2 {
+            line-height: 25px;
+        }
+
+        #head2 {
+            font-size: 33px;
+        }
+
+
+        .content p {
+            margin-bottom: 10px;
+        }
+
+        .content button {
+            float: right;
+            display: block;
+            background-color: #0a2351;
+            color: white;
+            padding: 10px 25px;
+            margin-right: 10px;
+            cursor: pointer;
+        }
+
+        #but1:hover {
+            background-color: darkblue;
+        }
+
+        .row {
+            width: 100%;
+            margin: auto;
+        }
+
+        #row1 {
+            width: 1500px;
+            margin: auto;
+        }
+
+
+        #first1 {
+            width: 100%;
+            margin: auto;
+            background-color: #0022
+        }
+
+        .all1 {
+            text-decoration: none;
+            font-size: 15px;
+            color: white;
+        }
+
+
+        .column {
+            width: 1500px;
+            padding-top: 30px;
+            padding-bottom: 50px;
+            float: left;
+            height: 400px;
+            color: white;
+        }
+
+
+        #col1 {
+            width: 25%;
+        }
+
+        #colh {
+            margin-left: 100px;
+        }
+
+        #colp {
+            margin-left: 100px;
+            line-height: 20px;
+        }
+
+        #col2 {
+            width: 20%;
+            font-size: 15px;
+            line-height: 25px;
+            color: white;
+        }
+
+        #col3 {
+            width: 30%;
+            line-height: 18px;
+        }
+
+        #col4 {
+            line-height: 20px;
+            width: 25%;
+        }
+
+        #colh4 {
+            margin-right: 50px;
+        }
+
+        #colp4 {
+            margin-right: 50px;
+        }
+
+
+        .column {
+            background-color: #0022
+        }
+
+        .row::after {
+            width: 100%;
+            content: "";
+            display: table;
+            clear: both;
+        }
+
+
+        .footer {
+            width: 100%;
+            background-color: #0a color:white;
+            height: 52px;
+        }
+
+        #idf {
+            width: 1500px;
+            margin: auto;
+        }
+
+        .p1 {
+            float: left;
+            margin-left: 50px;
+        }
+
+        .p2 {
+            float: right;
+            margin-right: 50px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header -->
+    <div class="head">
+        <header>
+            <img src="path_to_your_logo" alt="Logo" class="logo">
+            <a href="/login" class="sign-in-button">Sign In</a>
+        </header>
+    </div>
+    <!-- Body -->
+    <img src="lionel-messi-2021-dz.jpg" alt="Main Image" class="main-image">
+
+    <!-- Cart View for Courses -->
+    <div class="cart-view">
+        <img src="course_image_url_1" alt="Course Image 1">
+        <img src="course_image_url_2" alt="Course Image 2">
+        <img src="course_image_url_3" alt="Course Image 3">
+    </div>
+
+    <!-- Placeholders -->
+    <div class="placeholders">
+        <div class="placeholder">ArshnivLabs guided Hands-on Lab</div>
+        <div class="placeholder">ArshnivLabs SandBox</div>
+        <div class="placeholder">ArshnivLabs BrowserVM</div>
+    </div>
+
+    <!-- Modal for Login -->
+    <div class="container" id="cont1">
+        <div class="image">
+            <img src="lionel-messi-2021-dz.jpg" alt="Image">
+        </div>
+        <div class="content">
+            <p id="par1">About Us</p>
+            <h2 id="head2">The Leading Land<br>Developers & Promoters.</h2>
+            <p id="par2">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus imperdiet, nulla et dictum
+                interdum, nisi lorem egestas odio, vitae scelerisque enim
+                <br>
+                Praesent convallis urna a lacus interdum ut hendrerit risus congue. Nunc sagittis dictum nisi, sed
+                ullamcorper ipsum dignissim ac. In at libero sed nunc venenatis imperdi
+                <button id="but1">Read More</button>
+        </div>
+    </div>
+
+    <section class="ntg">
+        <div class="container img-cont  ">
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="image-content">
+                        <h4 class="fs1 p-lg-3">Arshniv Technologies</h4>
+                        <a class="read-more-btn ml-auto" href="#">Read More</a>
+                    </div>
+                </div>
+
+
+            </div>
+
+            <div class="container">
+                <div class="row">
+                    <h1>Our Companies</h1>
+                    <div class="col">
+
+
+                    </div>
+                </div>
+            </div>
+
+            <div id="first1">
+                <div class="row" id="row1">
+                    <div class="column" id="col1">
+                        <h2 id="colh">About Us</h2>
+                        <p id="colp">Lorem ipsum dolor sit amet,consectetur adipiscing elit. <br>Maecenas sit amet
+                            pretium
+                            urna.<br> Vivamus venenatis velit nec neque ultricies, <br>eget e
+                            <br>Praesent scelerisque tortor sed accumsan convallis.
+                        </p>
+                    </div>
+
+                    <div class="column" id="col2">
+                        <ul style="list-style: none;">
+                            <h2>
+                                <li>Quick links</li>
+                            </h2>
+                            <li><a href="#" class="all1">Our Company</a></li>
+                            <br>
+                            <li><a href="#" class="all1">Our Team</a></li>
+                            <br>
+                            <li><a href="#" class="all1">Associates & <br>Consultants</a></li>
+                            <br>
+                            <li><a href="#" class="all1">Joint Development</a></li>
+                            <br>
+                            <li><a href="#" class="all1">Referral Programme</a></li>
+                        </ul>
+                    </div>
+
+
+                    <div class="column" id="col3">
+                        <h2></h2>
+                        <p>
+                            Lorem ipsum dolor sit amet,consectetur adipiscing elit. <br>Maecenas sit amet pretiu
+                            Vivamus venenatis velit nec neque ultricies, <br>eget e
+                            ent scelerisque tortor sed accumsan convallis.
+
+                            Lorem ipsum dolor sit amet,<br>consectetur adipiscing elit. <br>Maecenas sit amet pretiu
+                            Vivamus venenatis velit nec neque ultricies, <br>
+                            eget e
+                            nt scelerisque tortor sed accumsan convallis.
+
+
+
+
+                        </p>
+                    </div>
+
+
+
+                    <div class="column" id="col4">
+                        <h2 id="colh4">Reach Us</h2>
+                        <p id"colp4">
+
+                            <br>
+                            +91 000000000<br>
+                            +91 000000000<br>
+                            <br>
+
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer">
+                <div id="idf">
+                    <p class="p1">All Rights Reserved 2022</p>
+                    <p class="p2">Powered by Arshniv Technologies</p>
+                </div>
+            </div>
+
+</body>
+
+</html>
